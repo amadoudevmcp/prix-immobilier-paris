@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix Immobilier Paris</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Évolution des Prix de l'Immobilier à Paris</h1>
+            <p class="subtitle">Analyse des tendances depuis 2023</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Prix moyen actuel</h3>
+                    <p class="price">10 636 €/m²</p>
+                    <span class="trend down">▼ -7.3% depuis 2023</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Variation annuelle</h3>
+                    <p class="percentage">-7.3%</p>
+                    <span class="period">2023-2024</span>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="priceChart"></canvas>
+            </div>
+
+            <div class="filters">
+                <select id="arrondissement">
+                    <option value="all">Tous les arrondissements</option>
+                    <option value="75020">Paris 20ème</option>
+                    <option value="75001">Paris 1er</option>
+                </select>
+                <select id="propertyType">
+                    <option value="all">Tous les types</option>
+                    <option value="apartment">Appartements</option>
+                    <option value="house">Maisons</option>
+                </select>
+            </div>
+        </div>
+
+        <footer>
+            <p>Données mises à jour en avril 2024 | Sources : Notaires de France, Le Figaro Immobilier</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
