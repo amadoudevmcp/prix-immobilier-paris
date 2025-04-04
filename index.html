@@ -12,37 +12,101 @@
         <header>
             <h1>Évolution des Prix de l'Immobilier à Paris</h1>
             <p class="subtitle">Analyse des tendances depuis 2023</p>
+            <nav class="tabs">
+                <button class="tab-btn active" data-tab="immobilier">Immobilier</button>
+                <button class="tab-btn" data-tab="camions">Annonces Camions</button>
+            </nav>
         </header>
 
-        <div class="dashboard">
-            <div class="stats-container">
-                <div class="stat-card">
-                    <h3>Prix moyen actuel</h3>
-                    <p class="price">10 636 €/m²</p>
-                    <span class="trend down">▼ -7.3% depuis 2023</span>
+        <div id="immobilier" class="tab-content active">
+            <div class="dashboard">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>Prix moyen actuel</h3>
+                        <p class="price">10 636 €/m²</p>
+                        <span class="trend down">▼ -7.3% depuis 2023</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Variation annuelle</h3>
+                        <p class="percentage">-7.3%</p>
+                        <span class="period">2023-2024</span>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3>Variation annuelle</h3>
-                    <p class="percentage">-7.3%</p>
-                    <span class="period">2023-2024</span>
+
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+
+                <div class="filters">
+                    <select id="arrondissement">
+                        <option value="all">Tous les arrondissements</option>
+                        <option value="75020">Paris 20ème</option>
+                        <option value="75001">Paris 1er</option>
+                    </select>
+                    <select id="propertyType">
+                        <option value="all">Tous les types</option>
+                        <option value="apartment">Appartements</option>
+                        <option value="house">Maisons</option>
+                    </select>
                 </div>
             </div>
+        </div>
 
-            <div class="chart-container">
-                <canvas id="priceChart"></canvas>
-            </div>
+        <div id="camions" class="tab-content">
+            <div class="trucks-container">
+                <div class="truck-card">
+                    <img src="https://images.unsplash.com/photo-1586191582056-b5d6147dcd1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Renault Premium">
+                    <div class="truck-info">
+                        <h3>Renault Premium 460 DXI</h3>
+                        <ul>
+                            <li><strong>Prix:</strong> 28 500 €</li>
+                            <li><strong>Kilométrage:</strong> 385 000 km</li>
+                            <li><strong>Année:</strong> 2015</li>
+                            <li><strong>Boîte:</strong> Manuelle</li>
+                            <li><strong>Carburant:</strong> Diesel</li>
+                            <li><strong>Localisation:</strong> Lyon, France</li>
+                        </ul>
+                        <p class="truck-description">Excellent état, entretien régulier, climatisation, suspension pneumatique, freins à disque.</p>
+                        <a href="https://www.europe-camions.com/tracteur-renault/premium/1-31-m645-867/tracteur-renault-premium.html?modele=460+DXI" target="_blank" class="link-btn">Voir l'annonce</a>
+                        <button class="contact-btn">Contacter le vendeur</button>
+                    </div>
+                </div>
 
-            <div class="filters">
-                <select id="arrondissement">
-                    <option value="all">Tous les arrondissements</option>
-                    <option value="75020">Paris 20ème</option>
-                    <option value="75001">Paris 1er</option>
-                </select>
-                <select id="propertyType">
-                    <option value="all">Tous les types</option>
-                    <option value="apartment">Appartements</option>
-                    <option value="house">Maisons</option>
-                </select>
+                <div class="truck-card">
+                    <img src="https://images.unsplash.com/photo-1586191582056-b5d6147dcd1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="DAF XF">
+                    <div class="truck-info">
+                        <h3>DAF XF 105.460</h3>
+                        <ul>
+                            <li><strong>Prix:</strong> 26 900 €</li>
+                            <li><strong>Kilométrage:</strong> 450 000 km</li>
+                            <li><strong>Année:</strong> 2014</li>
+                            <li><strong>Boîte:</strong> Manuelle</li>
+                            <li><strong>Carburant:</strong> Diesel</li>
+                            <li><strong>Localisation:</strong> Marseille, France</li>
+                        </ul>
+                        <p class="truck-description">Très bon état, équipé GPS, régulateur de vitesse, ralentisseur hydraulique.</p>
+                        <a href="https://www.europe-camions.com/tracteur-daf/xf105/1-31-m180-167/tracteur-daf-xf105.html" target="_blank" class="link-btn">Voir l'annonce</a>
+                        <button class="contact-btn">Contacter le vendeur</button>
+                    </div>
+                </div>
+
+                <div class="truck-card">
+                    <img src="https://images.unsplash.com/photo-1586191582056-b5d6147dcd1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="MAN TGX">
+                    <div class="truck-info">
+                        <h3>MAN TGX 18.440</h3>
+                        <ul>
+                            <li><strong>Prix:</strong> 29 900 €</li>
+                            <li><strong>Kilométrage:</strong> 420 000 km</li>
+                            <li><strong>Année:</strong> 2016</li>
+                            <li><strong>Boîte:</strong> Manuelle</li>
+                            <li><strong>Carburant:</strong> Diesel</li>
+                            <li><strong>Localisation:</strong> Lille, France</li>
+                        </ul>
+                        <p class="truck-description">Parfait état, équipement complet, système de freinage ABS, ESP, cabine spacieuse.</p>
+                        <a href="https://www.truck1.fr/tracteurs-routiers/man/tgx-18-440" target="_blank" class="link-btn">Voir l'annonce</a>
+                        <button class="contact-btn">Contacter le vendeur</button>
+                    </div>
+                </div>
             </div>
         </div>
 
